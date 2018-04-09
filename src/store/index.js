@@ -10,7 +10,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
         options: [],
-        activeIndex: '/user',
+        activeIndex: '/generalManagement',
         userInfo: {}
     },
     mutations: {
