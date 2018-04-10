@@ -1,8 +1,8 @@
 <template>
     <div class="header">
         <div class="logo">后台管理系统</div>
-        <div class="login-name"><span>登录人:</span><span>{{username}}</span></div>
-        <div class="login-name"><span>当前部门:</span><span>集团</span></div>
+        <div class="login-name"><span>登录人:</span>&nbsp;<span>{{username}}</span></div>
+        <div class="login-name"><span>当前部门:</span>&nbsp;<span>集团</span></div>
         <div class="user-info">
             <el-dropdown trigger="click" @command="handleCommand">
                 <span class="el-dropdown-link">
@@ -97,6 +97,7 @@
     }
     .el-dropdown-link>img{
         vertical-align: middle;
+        margin-top:-5px;
     }
     .login-name{
         float: left;
@@ -114,6 +115,7 @@
     .headerTimer{
         float:right;
         padding-right: 10px;
-        font-weight: bold;
+        font-weight: 300;
+        font-size:20px;
     }
 </style>

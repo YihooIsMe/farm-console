@@ -25,14 +25,18 @@
             tabClick (tab) {
                 let path = this.activeIndex;
                 // 用户详情页的时候，对应了二级路由，需要拼接添加第二级路由
+/*
+                console.log(path);
                 if (this.activeIndex === '/userInfo') {
                     path = this.activeIndex + '/' + this.$store.state.userInfo.name;
                 }
-                this.$router.push({path: path});
+*/
+                this.$router.push(path);
             },
             tabRemove (targetName) {
                 // 首页不可删除
-                if(targetName == '/') {
+                console.log(targetName);
+                if(targetName == '/generalManagement') {
                     return;
                 }
                 this.$store.commit('delete_tabs', targetName);
@@ -62,7 +66,6 @@
         },
         watch: {
             '$route'(to) {
-                console.log(to);
                 let flag = false;
                 for (let option of this.options ) {
                     if (option.name === to.name) {
@@ -78,12 +81,9 @@
             }
         },
         mounted(){
-            console.log(this.$route.path);
             if(this.$route.path!=='/generalManagement'){
-/*
                 this.$store.commit('add_tabs',{route: '/generalManagement', name: '综合管理'});
                 this.$store.commit('add_tabs', {route: this.$route.path , name: this.$route.name });
-*/
                 this.$store.commit('set_active_index', this.$route.path);
             }else {
                 this.$store.commit('add_tabs', {route: '/generalManagement', name: '综合管理'});
@@ -94,3 +94,6 @@
 
     }
 </script>
+<style scoped>
+
+</style>
