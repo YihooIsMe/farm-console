@@ -70,7 +70,7 @@
     }
 </script>
 
-<style scoped>
+<style>
     .sidebar{
         display: block;
         position: absolute;
@@ -82,5 +82,9 @@
     }
     .sidebar > ul {
         height:100%;
+    }
+    .el-menu-item, .el-submenu__title{
+        height:45px !important;
+        line-height:45px !important;
     }
 </style>
