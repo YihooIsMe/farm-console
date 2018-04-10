@@ -56,6 +56,7 @@
                     return this.$store.state.activeIndex;
                 },
                 set (val) {
+                    console.log(val)
                     this.$store.commit('set_active_index', val);
                 }
             }
@@ -80,10 +81,8 @@
         mounted(){
             console.log(this.$route.path);
             if(this.$route.path!=='/generalManagement'){
-/*
                 this.$store.commit('add_tabs',{route: '/generalManagement', name: '综合管理'});
                 this.$store.commit('add_tabs', {route: this.$route.path , name: this.$route.name });
-*/
                 this.$store.commit('set_active_index', this.$route.path);
             }else {
                 this.$store.commit('add_tabs', {route: '/generalManagement', name: '综合管理'});
